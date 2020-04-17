@@ -99,9 +99,9 @@ for key in subcluster_centres_all.keys():
 subcluster_allocation = distances_sub.index(min(distances_sub))    #---> SUBCLUSTER 1 
 
 #===> CLUSTER 10, SUB-CLUSTER 1
-#==> Check from cluster bars!
+#==> Check from cluster bars for each performance metric!
 
-#Actual results
+#Actual results: Change between roc, prc, f1
 with open('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Test results/Cylinder Bands test dataset/Actual results/cylinder_top_3_roc.pickle', 'rb') as handle:
     actual_results = pickle.load(handle)
 print("==========================================")
