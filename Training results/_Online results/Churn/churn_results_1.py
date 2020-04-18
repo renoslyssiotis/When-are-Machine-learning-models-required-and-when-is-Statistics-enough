@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Churn Modelling/Churn_Modelling.csv')
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Churn Modelling/Churn_Modelling.csv')
 df = df.drop(['RowNumber','CustomerId','Surname'], axis = 1)
 
 #Randomly select 20% of rows

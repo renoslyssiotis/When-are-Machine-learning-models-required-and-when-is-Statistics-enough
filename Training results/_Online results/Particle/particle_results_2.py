@@ -10,7 +10,7 @@ import pickle
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset and split into features and target variable
-df = pd.read_excel('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Particle/MiniBooNE_PID.xlsm', header = None)
+df = pd.read_excel('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Particle/MiniBooNE_PID.xlsm', header = None)
 df['target'] = 36499*[0] + 93565*[1]
 
 #Randomly select 40% of rows

@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Sonar/sonar.csv',
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Sonar/sonar.csv',
                  names = list(np.arange(1,62,1)),index_col = False)
 
 def binary_class(row):

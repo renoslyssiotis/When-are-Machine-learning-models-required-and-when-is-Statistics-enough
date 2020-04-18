@@ -6,7 +6,7 @@ import time
 start_time = time.time()
 
 #Load the selected meta-dataset after performing zero-variance threshold
-with open('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Plots and Figures/Feature Selection/Customised set/customised_X_AUCROC_202.pickle', 'rb') as handle:
+with open('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Analysis/Feature Selection/Customised set/customised_X_AUCROC_202.pickle', 'rb') as handle:
     metadataset_feature_selected = pickle.load(handle)
     
 #=====================META-FEATURE EXTRACTION==================================

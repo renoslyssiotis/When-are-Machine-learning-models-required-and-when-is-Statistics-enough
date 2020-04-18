@@ -13,7 +13,7 @@ start_time = time.time()
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset and split into features and target variable
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/White wine/winequality-white.csv', 
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/White wine/winequality-white.csv', 
                  sep=";")
 
 #Classes 0 and 1: quality 

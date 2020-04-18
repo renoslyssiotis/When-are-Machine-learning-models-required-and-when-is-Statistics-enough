@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset
-data = arff.loadarff('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Vertebral Column Data/column_2C_weka.arff')
+data = arff.loadarff('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Vertebral Column Data/column_2C_weka.arff')
 df = pd.DataFrame(data[0])
 
 def bytes2string(row):

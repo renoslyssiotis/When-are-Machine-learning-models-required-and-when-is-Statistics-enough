@@ -30,7 +30,7 @@ start_time = time.time()
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset and split into features and target variable
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Cylinder Bands/bands.data',
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Cylinder Bands/bands.data',
                  header = None)
 
 del df[0]

@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset
-df = pd.read_excel('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Conventional and Social Media Movies/2014 _and_2015_CSM_dataset.xlsx')
+df = pd.read_excel('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Conventional and Social Media Movies/2014 _and_2015_CSM_dataset.xlsx')
 df.drop(['Movie', 'Year'], axis = 1, inplace = True)
 
 def classify(row):

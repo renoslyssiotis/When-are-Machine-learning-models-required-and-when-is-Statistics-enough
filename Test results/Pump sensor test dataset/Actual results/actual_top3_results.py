@@ -15,7 +15,7 @@ start_time = time.time()
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset and split into features and target variable
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Sensor/sensor.csv')
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Sensor/sensor.csv')
 
 del df['Unnamed: 0']
 del df['sensor_15']

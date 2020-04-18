@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset and split into features and target variable
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Drug Consumption/drug_consumption.data',
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Drug Consumption/drug_consumption.data',
                  header = None)
 
 def binary_class(row):

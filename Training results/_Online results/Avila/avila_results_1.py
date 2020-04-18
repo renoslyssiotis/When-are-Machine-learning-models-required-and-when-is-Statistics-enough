@@ -10,7 +10,7 @@ import pickle
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset and split into features and target variable
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/avila/avila-tr.txt', 
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/avila/avila-tr.txt', 
                  sep=",", 
                  names = "F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 Class".split(" "))
 

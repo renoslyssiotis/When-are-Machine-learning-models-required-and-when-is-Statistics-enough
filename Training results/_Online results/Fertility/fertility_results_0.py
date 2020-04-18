@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Categorical/Fertility Diagnosis/fertility_Diagnosis.txt',
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Fertility Diagnosis/fertility_Diagnosis.txt',
                  sep = ',',
                  names = list(range(1,11)))
 

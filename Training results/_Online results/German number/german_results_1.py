@@ -10,9 +10,9 @@ import pickle
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset and split into features and target variable
-df1 = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/German Number/class0_german+numer.txt', 
+df1 = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/German Number/class0_german+numer.txt', 
                  sep="\t", header = None)
-df2 = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/German Number/class1_german+numer.txt', 
+df2 = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/German Number/class1_german+numer.txt', 
                  sep="\t", header = None)
 df = pd.concat([df1, df2], axis=0)
 

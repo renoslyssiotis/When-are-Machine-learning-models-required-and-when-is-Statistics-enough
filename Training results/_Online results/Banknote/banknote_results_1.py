@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset and split into features and target variable
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Banknote Dataset/data_banknote_authentication.txt', 
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Banknote Dataset/data_banknote_authentication.txt', 
                  sep=",", 
                  names = ["Variance","Skewness","Kurtosis","Entropy","y"])
 

@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset and split into features and target variable
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Liver/Indian_Liver_Patient_Dataset_(ILPD).csv',
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Liver/Indian_Liver_Patient_Dataset_(ILPD).csv',
                  header = None)
 
 df.drop(df.index[[209, 241, 253, 312]], inplace = True)

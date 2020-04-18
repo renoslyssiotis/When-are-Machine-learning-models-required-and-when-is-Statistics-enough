@@ -23,7 +23,7 @@ general_metafeatures = list(all_meta_features.iloc[-1][:6])
 stat_and_info_metafeatures = list(all_meta_features.iloc[-1][6:])
 
 #Load the cluster centres of the 13 clusters:
-with open('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Plots and Figures/Dataset clustering/cluster_centres.pickle', 'rb') as handle:
+with open('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Analysis/Dataset clustering/Two-level clustering/General Clustering standardised/cluster_centres.pickle', 'rb') as handle:
     cluster_centres = pickle.load(handle)
 
 #==============================================================================
@@ -43,8 +43,8 @@ cluster_allocation = distances.index(min(distances))    #---> CLUSTER 10
 #==============================================================================
 #                       SECOND LEVEL CLUSTERING    
 #==============================================================================    
-with open('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Plots and Figures/Dataset clustering/Plots/Stat_InfoTherory_2nd level clustering_standardised/AUC-ROC/subclusters_of_cluster_10.pickle', 'rb') as handle:
-    sub_cluster_indices = pickle.load(handle)           # ---> 2 sub-clusters
+with open('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Analysis/Dataset clustering/Two-level clustering/General Clustering standardised/Second level clustering/AUC-ROC/subclusters_of_cluster_10.pickle', 'rb') as handle:
+    sub_cluster_indices = pickle.load(handle)           # ---> 5 sub-clusters
 
 training = all_meta_features.iloc[:-1, :]
 training.index = df_results.index
@@ -96,7 +96,7 @@ for key in subcluster_centres_all.keys():
         distance += abs( subcluster_centres_all[key][j] - stat_and_info_metafeatures[j])
     distances_sub.append(distance)
 
-subcluster_allocation = distances_sub.index(min(distances_sub))    #---> SUBCLUSTER 1 
+subcluster_allocation = distances_sub.index(min(distances_sub))    #---> SUBCLUSTER 1 ==> PERCEPTRON
 
 #===> CLUSTER 10, SUB-CLUSTER 1
 #==> Check from cluster bars for each performance metric!

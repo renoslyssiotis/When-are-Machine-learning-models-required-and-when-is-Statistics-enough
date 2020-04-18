@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Anuran Calls (MFCCs)/Frogs_MFCCs.csv')
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Anuran Calls (MFCCs)/Frogs_MFCCs.csv')
 df = df.drop(['Species','Genus','RecordID'], axis = 1)
 
 def rename_family_name(row):

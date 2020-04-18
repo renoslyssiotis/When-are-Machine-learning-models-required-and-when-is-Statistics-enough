@@ -10,7 +10,7 @@ import pickle
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset and split into features and target variable
-df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Pulsar Star/pulsar_stars.csv') 
+df = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Pulsar Star/pulsar_stars.csv') 
 
 #Randomly select 20% of rows
 df_ = df.sample(frac=0.2)

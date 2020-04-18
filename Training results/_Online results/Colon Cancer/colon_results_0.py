@@ -10,9 +10,9 @@ import numpy as np
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset and split into features and target variable
-df1 = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Colon Cancer/class0_colon-cancer.txt', 
+df1 = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Colon Cancer/class0_colon-cancer.txt', 
                  sep="\t", header = None)
-df2 = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Colon Cancer/class1_colon-cancer.txt', 
+df2 = pd.read_csv('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Colon Cancer/class1_colon-cancer.txt', 
                  sep="\t", header = None)
 df = pd.concat([df1, df2], axis=0)
 

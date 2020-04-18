@@ -4,7 +4,7 @@ from KNN_ranking_k_5 import KNN_ranking
 import pickle
 
 #Load the selected meta-dataset after performing zero-variance threshold
-with open('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Plots and Figures/Feature Selection/Forward Selection/forward_X_f1_202.pickle', 'rb') as handle:
+with open('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Analysis/Feature Selection/Forward Selection/forward_X_f1_202.pickle', 'rb') as handle:
     metadataset_feature_selected = pickle.load(handle)
     
 #=====================META-FEATURE EXTRACTION==================================

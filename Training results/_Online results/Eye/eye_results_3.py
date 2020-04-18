@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 
 #=========================DATA PRE-PROCESSING==================================
 #Import dataset
-data = arff.loadarff('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Eye/EEG Eye State.arff')
+data = arff.loadarff('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Eye/EEG Eye State.arff')
 df = pd.DataFrame(data[0])
 
 def decode(row):

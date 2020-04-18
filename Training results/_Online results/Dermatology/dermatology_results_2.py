@@ -10,7 +10,7 @@ from pre_processing import preProcessor
 from sklearn.model_selection import train_test_split
 
 #=========================DATA PRE-PROCESSING==================================
-df = pd.read_excel('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Numerical/Dermatology/dermatology.data.xlsm',
+df = pd.read_excel('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Datasets/Classification/Dermatology/dermatology.data.xlsm',
                    names = list(np.linspace(1,35,35)), index_col = False)
 
 df.columns = [*df.columns[:-1], 'Class']
