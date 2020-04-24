@@ -8,7 +8,7 @@ import pickle
 import pandas as pd
 
 '''
-Obtain a predidiction for the best-performing model on your binary
+Obtain a prediction for the best-performing model on your binary
 classification dataset, using the following meta-learner
 
                KNN meta-learner, k = 3, RMSE distance metric
