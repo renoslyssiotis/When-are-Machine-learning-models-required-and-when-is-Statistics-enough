@@ -1,8 +1,9 @@
 import sys
-sys.path.append('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Plots and Figures/Performance gain vs. Meta-features')
+sys.path.append('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Analysis/Performance gain vs. Meta-features')
 from retrieve_performance_gain import retrieve_best_ML_and_stats_model
 import pandas as pd
 import pickle
+import numpy as np
 import statsmodels.api as sm    
 import matplotlib.pyplot as plt
 
@@ -37,7 +38,7 @@ print('\n' + '------------------------------------------------------------------
 
 #===============================================================================
 #       R-squared = -0.665
-#       p-value of Coefficient of variation = 0.890
+#       p-value of Coefficient of variation = 0.932
 #===============================================================================
 #Independent variables
 X2 = df_results[['Number of Instances', 'Number of Features', 'Proportion of Numerical Features',
@@ -181,11 +182,8 @@ print('\n' + '------------------------------------------------------------------
 #Independent variables
 X9 = df_results[['Number of Instances', 'Number of Features', 'Proportion of Numerical Features',
        'Number of Dummy Variables after pre-processing','Proportion of Less Frequent Class',
-       'Number of Classes', 'Mean mean', 'Mean std', 
-       'Mean skewness', 
-       'Mean Median Absolute Deviation',
-       'Mean Canonical Correlations', 
-       'Normalized Class Entropy', 'Signal to Noise ratio',
+       'Number of Classes', 'Mean mean', 'Mean std', 'Mean skewness', 'Mean Median Absolute Deviation',
+       'Mean Canonical Correlations', 'Normalized Class Entropy', 'Signal to Noise ratio',
        'Max Mutual Information', 'Mean Mutual Information']]
 X9 = sm.add_constant(X9, has_constant='add')
 
@@ -201,10 +199,8 @@ print('\n' + '------------------------------------------------------------------
 #Independent variables
 X10 = df_results[['Number of Features', 'Proportion of Numerical Features',
        'Number of Dummy Variables after pre-processing','Proportion of Less Frequent Class',
-       'Number of Classes', 'Mean mean', 'Mean std', 
-       'Mean skewness', 
-       'Mean Median Absolute Deviation',
-       'Mean Canonical Correlations', 
+       'Number of Classes', 'Mean mean', 'Mean std', 'Mean skewness',
+       'Mean Median Absolute Deviation', 'Mean Canonical Correlations', 
        'Normalized Class Entropy', 'Signal to Noise ratio',
        'Max Mutual Information', 'Mean Mutual Information']]
 X10 = sm.add_constant(X10, has_constant='add')
@@ -221,11 +217,8 @@ print('\n' + '------------------------------------------------------------------
 #Independent variables
 X11 = df_results[['Number of Features', 'Proportion of Numerical Features',
        'Number of Dummy Variables after pre-processing','Proportion of Less Frequent Class',
-       'Mean mean', 'Mean std', 
-       'Mean skewness', 
-       'Mean Median Absolute Deviation',
-       'Mean Canonical Correlations', 
-       'Normalized Class Entropy', 'Signal to Noise ratio',
+       'Mean mean', 'Mean std', 'Mean skewness', 'Mean Median Absolute Deviation',
+       'Mean Canonical Correlations', 'Normalized Class Entropy', 'Signal to Noise ratio',
        'Max Mutual Information', 'Mean Mutual Information']]
 X11 = sm.add_constant(X11, has_constant='add')
 
@@ -234,7 +227,6 @@ model11 = sm.OLS(y, X11).fit()
 print(model11.summary())
 print('\n' + '-------------------------------------------------------------------------------------------------------'+'\n' + '-------------------------------------------------------------------------------------------------------'+'\n'+'\n')
 
-
 #===============================================================================
 #       R-squared = 0.180
 #       p-value of Mean of mean = 0.254
@@ -242,11 +234,8 @@ print('\n' + '------------------------------------------------------------------
 #Independent variables
 X12 = df_results[['Number of Features', 'Proportion of Numerical Features',
        'Number of Dummy Variables after pre-processing','Proportion of Less Frequent Class',
-       'Mean std', 
-       'Mean skewness', 
-       'Mean Median Absolute Deviation',
-       'Mean Canonical Correlations', 
-       'Normalized Class Entropy', 'Signal to Noise ratio',
+       'Mean std', 'Mean skewness', 'Mean Median Absolute Deviation',
+       'Mean Canonical Correlations', 'Normalized Class Entropy', 'Signal to Noise ratio',
        'Max Mutual Information', 'Mean Mutual Information']]
 X12 = sm.add_constant(X12, has_constant='add')
 
@@ -262,11 +251,8 @@ print('\n' + '------------------------------------------------------------------
 #Independent variables
 X13 = df_results[['Number of Features', 'Proportion of Numerical Features',
        'Number of Dummy Variables after pre-processing','Proportion of Less Frequent Class',
-       'Mean std', 
-       'Mean skewness', 
-       'Mean Median Absolute Deviation',
-       'Mean Canonical Correlations', 
-       'Normalized Class Entropy', 
+       'Mean std', 'Mean skewness', 'Mean Median Absolute Deviation',
+       'Mean Canonical Correlations','Normalized Class Entropy', 
        'Max Mutual Information', 'Mean Mutual Information']]
 X13 = sm.add_constant(X13, has_constant='add')
 
@@ -277,17 +263,14 @@ print('\n' + '------------------------------------------------------------------
 
 #===============================================================================
 #       R-squared = 0.180
-#       p-value of Mean Std = 0.242
+#       p-value of constant = 0.254
 #===============================================================================
 #Independent variables
 X14 = df_results[['Number of Features', 'Proportion of Numerical Features',
        'Number of Dummy Variables after pre-processing','Proportion of Less Frequent Class',
-       'Mean skewness', 
-       'Mean Median Absolute Deviation',
-       'Mean Canonical Correlations', 
-       'Normalized Class Entropy', 
+       'Mean std', 'Mean skewness', 'Mean Median Absolute Deviation',
+       'Mean Canonical Correlations','Normalized Class Entropy', 
        'Max Mutual Information', 'Mean Mutual Information']]
-X14 = sm.add_constant(X14, has_constant='add')
 
 #Target variable: performance gain in AUC-ROC
 model14 = sm.OLS(y, X14).fit()
@@ -295,32 +278,24 @@ print(model14.summary())
 print('\n' + '-------------------------------------------------------------------------------------------------------'+'\n' + '-------------------------------------------------------------------------------------------------------'+'\n'+'\n')
 
 #===============================================================================
-#       R-squared = 0.174
-#       p-value of constant= 0.7
+#       R-squared = 0.518
+#       p-value of mean std = 0.643
 #===============================================================================
 #Independent variables
 X15 = df_results[['Number of Features', 'Proportion of Numerical Features',
        'Number of Dummy Variables after pre-processing','Proportion of Less Frequent Class',
-       'Mean skewness', 
-       'Mean Median Absolute Deviation',
-       'Mean Canonical Correlations', 
-       'Normalized Class Entropy', 
+       'Mean skewness', 'Mean Median Absolute Deviation',
+       'Mean Canonical Correlations','Normalized Class Entropy', 
        'Max Mutual Information', 'Mean Mutual Information']]
-# X14 = sm.add_constant(X14, has_constant='add')
 
 #Target variable: performance gain in AUC-ROC
 model15 = sm.OLS(y, X15).fit()
 print(model15.summary())
 print('\n' + '-------------------------------------------------------------------------------------------------------'+'\n' + '-------------------------------------------------------------------------------------------------------'+'\n'+'\n')
 
-
-
-
-
-
 #===============================================================================
 #       R-squared = 0.517
-#      All p-value are small! (<0.06)
+#      All p-value are small! (<0.05)
 #===============================================================================
 
 """
@@ -330,11 +305,19 @@ a linear regression model is usually appropriate for the data
 """
 predictions = model15.predict(X15)
 residual = y - predictions
-plt.scatter(y, residual)
+residuals = plt.scatter(y, residual, s = 20, c = 'red', alpha = 0.5)
 plt.xlabel("Performance gain (AUC-ROC)", fontsize=14)
 plt.ylabel("Residuals", fontsize=14)
 plt.title("Residuals plot", fontsize=14)
+m, b = np.polyfit(y, residual, 1)
+plt.plot(y, m*y + b, c = 'blue', label = 'Line of best fit')
+plt.legend(loc="upper left")
+# plt.legend((residuals, line), ('Residuals', 'Line of best fit'),
+#             ncol = 2,
+#             scatterpoints=1)
+plt.savefig('residuals_plot.png',  dpi=500)
 plt.show()
+
 
 
 
