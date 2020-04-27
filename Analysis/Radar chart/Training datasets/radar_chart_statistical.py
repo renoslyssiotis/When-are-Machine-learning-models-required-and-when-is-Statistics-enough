@@ -9,30 +9,28 @@ mpl.rcParams['figure.dpi'] = 750
 
 df_results = pd.read_pickle('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Test results/df_results.plk')
     
-dataset_0 = list(df_results.iloc[0,[-11, -10, -9, -7]])
-dataset_1 = list(df_results.iloc[49,[-11, -10, -9, -7]])
-dataset_2 = list(df_results.iloc[99,[-11, -10, -9, -7]])
-dataset_3 = list(df_results.iloc[149,[-11, -10, -9, -7]])
-dataset_4 = list(df_results.iloc[199,[-11, -10, -9, -7]])
+dataset_0 = list(df_results.iloc[0,[6,7,10,11,14]])
+dataset_1 = list(df_results.iloc[49,[6,7,10,11,14]])
+dataset_2 = list(df_results.iloc[99,[6,7,10,11,14]])
+dataset_3 = list(df_results.iloc[149,[6,7,10,11,14]])
+dataset_4 = list(df_results.iloc[199,[6,7,10,11,14]])
 
 data = [dataset_0, dataset_1, dataset_2, dataset_3, dataset_4]
 
-df = pd.DataFrame(data, columns = ['Mean normalised feature entropy',
-                                   'Mean normalised class entropy',
-                                   'Mean SNR',
-                                   'Mean Mutual Information'])
+df = pd.DataFrame(data, columns = ['Mean of mean', 'Mean of standard deviation',
+       'Mean kurtosis', "Mean Pearson correlation",
+       'Mean Median Absolute Deviation (MAD)'])
 
-col_names = ['Mean normalised feature entropy',
-                                   'Mean normalised class entropy',
-                                   'Mean SNR',
-                                   'Mean Mutual Information']
+col_names = ['Mean of mean', 'Mean of standard deviation',
+       'Mean kurtosis', "Mean Pearson correlation",
+       'Mean Median Absolute Deviation (MAD)']
 
 scaled_features = df.copy()
 features = scaled_features[col_names]
 scaler = StandardScaler().fit(features.values)
 features = scaler.transform(features.values)
 scaled_features[col_names] = features
-category = ["Info1", "Info2", "Info3", "Info4"]
+category = ["Stat1", "Stat2", "Stat3", "Stat4", "Stat5"]
 scaled_features.columns = category
 
 # ------- PART 1: Create background
@@ -89,8 +87,8 @@ values += values[:1]
 ax.plot(angles, values, linewidth=1, linestyle='solid', label="Dataset 4")
 ax.fill(angles, values, 'c', alpha=0.1)
 
-plt.title("Radar chart for information-theoretic\n meta-features", y = 1.1, fontweight='bold', size=13)
-plt.legend(loc='lower right', bbox_to_anchor=(0.92, -0.3), ncol = 2)
+plt.title("Statistical meta-features", y = 1.1, fontweight='bold',size=13)
+plt.legend(loc='lower right', bbox_to_anchor=(0.92, -0.2), ncol = 2)
 
 
 
