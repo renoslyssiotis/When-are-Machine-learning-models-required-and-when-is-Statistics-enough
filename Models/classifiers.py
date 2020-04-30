@@ -1,12 +1,11 @@
 from sklearn.model_selection import GridSearchCV
-#from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression, Perceptron
 from sklearn.neural_network import MLPClassifier
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.naive_bayes import GaussianNB, BernoulliNB, MultinomialNB
+from sklearn.naive_bayes import GaussianNB, BernoulliNB
 from sklearn.svm import LinearSVC
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis, LinearDiscriminantAnalysis
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, BaggingClassifier, GradientBoostingClassifier
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, BaggingClassifier
 from sklearn.metrics import roc_auc_score, average_precision_score, f1_score
 
 class classifier(object):
@@ -54,45 +53,7 @@ class classifier(object):
         print('Logistic Regression completed: F1 metric: {}'.format(f1_logit)+'\n' + '------------------------------------------------------------------')
         
         return roc_auc_logit, auc_prc_logit,f1_logit
-    
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = grid_logit.predict(X_train)
-        #roc_auc_logit_train = roc_auc_score(y_train, y_pred_train)
-    
-#=========================K-NEAREST NEIGHBOURS=================================
-    # def KNN(self,):
-    
-    #     param_grid_knn = dict(n_neighbors = [1,3,5,7],
-    #                           weights = ['uniform', 'distance'],
-    #                           algorithm = ['auto']
-    #                           )
-    
-    #     knn = KNeighborsClassifier()
-    
-    #     grid_knn = GridSearchCV(estimator=knn, 
-    #                             param_grid=param_grid_knn, 
-    #                             cv = 3, 
-    #                             n_jobs=-1,
-    #                             error_score=0.0,
-    #                             iid=False)
-    
-    #     grid_knn.fit(self.X_train, self.y_train)
-    
-    #     #Predict the test set results 
-    #     y_pred = grid_knn.predict(self.X_test)
-    
-    #     #Performance
-    #     roc_auc_knn = roc_auc_score(self.y_test, y_pred)
-    #     print('KNN completed: ROC-AUC: {}'.format(roc_auc_knn)+'\n' + '------------------------------------------------------------------')
-
-    #     auc_prc_knn = average_precision_score(self.y_test, y_pred, average='weighted')
-    #     print('KNN completed: AUC-PRC: {}'.format(auc_prc_knn)+'\n' + '------------------------------------------------------------------')
-    #     return roc_auc_knn , auc_prc_knn
-    
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = grid_knn.predict(X_train)
-        #roc_auc_knn_train = roc_auc_score(y_train, y_pred_train)
-    
+     
 #==========================DECISION TREE=======================================
     def decisionTree(self,):
     
@@ -129,10 +90,6 @@ class classifier(object):
         
         return roc_auc_dtree, auc_prc_dtree, f1_dtree
         
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = grid_dtree.predict(X_train)
-        #roc_auc_dtree_train = roc_auc_score(y_train, y_pred_train)
-        
 #==========================RANDOM FOREST=======================================
     def randomForest(self,):
         
@@ -168,10 +125,6 @@ class classifier(object):
         
         
         return roc_auc_rforest, auc_prc_rforest, f1_rforest
-        
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = grid_rforest.predict(X_train)
-        #roc_auc_rforest_train = roc_auc_score(y_train, y_pred_train)
     
 #==========================PERCEPTRON==========================================
     def perceptron(self,):
@@ -207,11 +160,7 @@ class classifier(object):
     
         
         return roc_auc_perceptron, auc_prc_perceptron, f1_perceptron
-        
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = grid_perceptron.predict(X_train)
-        #roc_auc_perceptron_train = roc_auc_score(y_train, y_pred_train)
-    
+
 #==========================Multi-layer perceptron==============================
     def MLP(self,):
         MLP = MLPClassifier(max_iter = 1000)
@@ -234,10 +183,6 @@ class classifier(object):
         print('MLP completed: F1 metric: {}'.format(f1_MLP)+'\n' + '------------------------------------------------------------------')
         
         return roc_auc_MLP, auc_prc_MLP, f1_MLP
-        
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = MLP.predict(X_train)
-        #roc_auc_MLP_train = roc_auc_score(y_train, y_pred_train)
 
 #===========================ADA BOOST==========================================
     def ADAboost(self, ):
@@ -269,41 +214,7 @@ class classifier(object):
         print('ADA Boost completed: F1 metric: {}'.format(f1_ada)+'\n' + '------------------------------------------------------------------')
         
         return roc_auc_ada, auc_prc_ada, f1_ada
-        
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = grid_ada.predict(X_train)
-        #roc_auc_ada_train = roc_auc_score(y_train, y_pred_train)
-    
-#===========================GRADIENT BOOSTING==================================
-#    def gradientBoost(self, ):
-#        
-#        param_grid_gradientboost = dict(n_estimators = [50,75,100],
-#                                        criterion = ['riedman_mse', 'mse', 'mae']
-#                                        )
-#        
-#        gradient_boosting = GradientBoostingClassifier()
-#        
-#        grid_gradientboost = GridSearchCV(estimator=gradient_boosting, 
-#                                        param_grid=param_grid_gradientboost, 
-#                                        cv = 3, 
-#                                        n_jobs=-1,
-#                                        error_score=0.0
-#                                        )
-#        
-#        grid_gradientboost.fit(self.X_train, self.y_train)
-#        
-#        #Predict the test set results 
-#        y_pred = grid_gradientboost.predict(self.X_test)
-#        
-#        #Performance
-#        roc_auc_gradientboosting = roc_auc_score(self.y_test, y_pred)
-#        print('Gradient Boosting completed: ROC-AUC: {}'.format(roc_auc_gradientboosting)+'\n' + '------------------------------------------------------------------')
-#        return roc_auc_gradientboosting
-    
-        #Check for overfitting - check ROC-AUC on training data
-#        y_pred_train = grid_gradientboost.predict(X_train)
-#        roc_auc_gboost_train = roc_auc_score(y_train, y_pred_train)
-    
+
 #===========================SVM: Linear Support Vector=========================
     def linearSVC(self, ):
     
@@ -340,11 +251,7 @@ class classifier(object):
 
         
         return roc_auc_linearsvc, auc_prc_linearsvc, f1_linearsvc
-        
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = grid_linearsvc.predict(X_train)
-        #roc_auc_linearsvc_train = roc_auc_score(y_train, y_pred_train)
-    
+
 #======================Linear Discriminant Analysis============================
     def LDA(self,):   
         
@@ -377,11 +284,7 @@ class classifier(object):
         print('LDA completed: F1 metric: {}'.format(f1_LDA)+'\n' + '------------------------------------------------------------------')
 
         return roc_auc_LDA, auc_prc_LDA, f1_LDA
-        
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = grid_LDA.predict(X_train)
-        #roc_auc_LDA_train = roc_auc_score(y_train, y_pred_train)
-    
+
 #===================Quadratic Discriminant Analysis============================
     def QDA(self, ):    
         
@@ -405,11 +308,7 @@ class classifier(object):
         print('QDA completed: F1 metric: {}'.format(f1_QDA)+'\n' + '------------------------------------------------------------------')
         
         return roc_auc_QDA, auc_prc_QDA, f1_QDA
-        
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = QDA.predict(X_train)
-        #roc_auc_QDA_train = roc_auc_score(y_train, y_pred_train)
-    
+
 #======================Gaussian Naive Bayes====================================
     def gaussianNB(self, ):
     
@@ -433,10 +332,6 @@ class classifier(object):
         print('QDA completed: F1 metric: {}'.format(f1_gaussianNB)+'\n' + '------------------------------------------------------------------')
         
         return roc_auc_gaussianNB, auc_prc_gaussianNB, f1_gaussianNB
-        
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = gaussianNB.predict(X_train)
-        #roc_auc_gaussianNB_train = roc_auc_score(y_train, y_pred_train)
     
 #======================Bernoulli Naive Bayes===================================
     def bernoulliNB(self, ):
@@ -462,31 +357,6 @@ class classifier(object):
         print('BernoulliNB completed: F1 metric: {}'.format(f1_bernoulliNB)+'\n' + '------------------------------------------------------------------')
         
         return roc_auc_bernoulliNB, auc_prc_bernoulliNB, f1_bernoulliNB
-        
-        #Check for overfitting - check ROC-AUC on training data
-        #y_pred_train = bernoulliNB.predict(X_train)
-        #roc_auc_bernoulliNB_train = roc_auc_score(y_train, y_pred_train)
-    
-#======================Multinomial Naive Bayes=================================
-#    def multinomialNB(self, ): 
-#        
-#        #Suitable for classification with discrete features 
-#        multinomialNB = MultinomialNB() 
-#        
-#        multinomialNB.fit(self.X_train, self.y_train)
-#        
-#        #Predict the test set results 
-#        y_pred = multinomialNB.predict(self.X_test)
-#        
-#        #Performance
-#        roc_auc_multiNB = roc_auc_score(self.y_test, y_pred)
-#        print('MultinomialNB completed: ROC-AUC: {}'.format(roc_auc_multiNB)+'\n' + '------------------------------------------------------------------')
-#        return roc_auc_multiNB
-#        
-#        #Check for overfitting - check ROC-AUC on training data
-#        #y_pred_train = multinomialNB.predict(X_train)
-#        #roc_auc_multinomialNB_train = roc_auc_score(y_train, y_pred_train)
-    
     
 #================================Bagging=======================================
     def bagging(self, ):

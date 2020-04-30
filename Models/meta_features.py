@@ -1,8 +1,11 @@
 import numpy as np
 from scipy import stats
 from math import e
-import sys
-sys.path.append('/Users/renoslyssiotis/Desktop/When-are-ML-models-required-and-when-is-Statistics-enough-/Models')
+import sys, os
+current_dir = os.path.realpath(__file__)
+from pathlib import PurePath
+p = PurePath(current_dir)
+sys.path.append(str(p.parents[0]))
 from pre_processing import preProcessor
 from sklearn.feature_selection import mutual_info_classif
 from sklearn.cross_decomposition import CCA

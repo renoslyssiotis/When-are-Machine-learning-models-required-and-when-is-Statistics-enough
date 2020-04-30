@@ -1,5 +1,4 @@
 from sklearn.model_selection import GridSearchCV
-#from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression, Perceptron
 from sklearn.neural_network import MLPClassifier
 from sklearn.tree import DecisionTreeClassifier
