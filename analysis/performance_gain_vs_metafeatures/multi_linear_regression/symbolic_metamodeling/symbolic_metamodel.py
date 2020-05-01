@@ -2,18 +2,18 @@ import sys, os, pickle
 from pathlib import PurePath
 current_dir = os.path.realpath(__file__)
 p = PurePath(current_dir)
-sys.path.append(str(p.parents[1]))
+sys.path.append(str(p.parents[2]))
 from retrieve_performance_gain import retrieve_best_ML_and_stats_model
 import pandas as pd
 from sklearn.metrics import average_precision_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier
-sys.path.append(str(p.parents[2])+'/metadataset_multiclass_classification/pysymbolic/algorithms')
-from symbolic_metamodeling import *
+sys.path.append(str(p.parents[0]))
+from pysymbolic.algorithms.symbolic_metamodeling import *
 
-df_results = pd.read_pickle(str(p.parents[4])+'/test/df_results.plk')
-with open(str(p.parents[4])+'/test/nested_results_roc.pickle', 'rb') as handle:
+df_results = pd.read_pickle(str(p.parents[6])+'/test/df_results.plk')
+with open(str(p.parents[6])+'/test/nested_results_roc.pickle', 'rb') as handle:
     nested_results_roc = pickle.load(handle) 
     
 #Performance gain in AUC-ROC   
