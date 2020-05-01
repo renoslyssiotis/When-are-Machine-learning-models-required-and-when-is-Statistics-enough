@@ -3,6 +3,12 @@
 
 from __future__ import absolute_import, division, print_function
 
+import os, sys
+from pathlib import PurePath
+current_dir = os.path.realpath(__file__)
+p = PurePath(current_dir)
+sys.path.append(str(p.parents[1]))
+
 import sys, os, time
 import numpy as np
 import pandas as pd
@@ -48,7 +54,7 @@ class MeijerG:
     """
     
     def __init__(self, theta=[2, 2, 2, 1, 1], order=[0, 1, 3, 1], 
-                 evaluation_mode='numpy', approximation_order=15, **kwargs):
+                  evaluation_mode='numpy', approximation_order=15, **kwargs):
         
         """
         :param theta: contains the poles and zeros of the Meijer G-function G(a_1,...,a_n,...,a_p; b_1,...,b_p,...,b_n| c * x),
@@ -139,8 +145,8 @@ class MeijerG:
         elif self.evaluation_mode in ['numpy','cython','theano']:
             
             evaluators_ = {'numpy': lambdify([x], self.approx_expression(), modules=['math']),
-                           'cython': lambdify([x], self.approx_expression(), modules=['math']), #ufuncify([x], self.approx_expression()),
-                           'theano': lambdify([x], self.approx_expression(), modules=['math'])} #theano_function([x], [self.approx_expression()])}
+                            'cython': lambdify([x], self.approx_expression(), modules=['math']), #ufuncify([x], self.approx_expression()),
+                            'theano': lambdify([x], self.approx_expression(), modules=['math'])} #theano_function([x], [self.approx_expression()])}
             
             evaluater_  = evaluators_[self.evaluation_mode]
             Y           = np.array([evaluater_(X[k]) for k in range(len(X))])

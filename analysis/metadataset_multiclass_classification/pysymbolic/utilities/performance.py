@@ -3,6 +3,12 @@
 
 from __future__ import absolute_import, division, print_function
 
+import os, sys
+from pathlib import PurePath
+current_dir = os.path.realpath(__file__)
+p = PurePath(current_dir)
+sys.path.append(str(p.parents[1]))
+
 import sys, os, time
 import numpy as np
 import pandas as pd
@@ -19,7 +25,7 @@ warnings.filterwarnings("ignore")
 if not sys.warnoptions:
     warnings.simplefilter("ignore")
 
-from special_functions import MeijerG
+from models.special_functions import MeijerG
 
 def compute_Rsquared(f_true, f_est):
 

@@ -2,6 +2,11 @@
 # Licensed under the BSD 3-clause license (see LICENSE.txt)
 
 from __future__ import absolute_import, division, print_function
+import os, sys
+from pathlib import PurePath
+current_dir = os.path.realpath(__file__)
+p = PurePath(current_dir)
+sys.path.append(str(p.parents[1]))
 
 import sys, os, time
 import numpy as np
@@ -19,8 +24,8 @@ warnings.filterwarnings("ignore")
 if not sys.warnoptions:
     warnings.simplefilter("ignore")
 
-from special_functions import MeijerG
-from performance import compute_Rsquared
+from models.special_functions import MeijerG
+from utilities.performance import compute_Rsquared
 
 #from sympy.printing.theanocode import theano_function
 from sympy.utilities.autowrap import ufuncify
@@ -102,11 +107,11 @@ def symbolic_regressor(f, npoints, xrange):
     y  = f(X)
 
     est_gp = SymbolicRegressor(population_size=5000,
-                               generations=20, stopping_criteria=0.01,
-                               p_crossover=0.7, p_subtree_mutation=0.1,
-                               p_hoist_mutation=0.05, p_point_mutation=0.1,
-                               max_samples=0.9, verbose=1,
-                               parsimony_coefficient=0.01, random_state=0)
+                                generations=20, stopping_criteria=0.01,
+                                p_crossover=0.7, p_subtree_mutation=0.1,
+                                p_hoist_mutation=0.05, p_point_mutation=0.1,
+                                max_samples=0.9, verbose=1,
+                                parsimony_coefficient=0.01, random_state=0)
 
     est_gp.fit(X, y)
 

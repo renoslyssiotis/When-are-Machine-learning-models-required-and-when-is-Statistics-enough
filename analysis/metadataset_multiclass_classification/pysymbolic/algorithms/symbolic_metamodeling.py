@@ -3,7 +3,14 @@
 # Copyright (c) 2019, Ahmed M. Alaa
 # Licensed under the BSD 3-clause license (see LICENSE.txt)
 
+
+
 from __future__ import absolute_import, division, print_function
+import os, sys
+from pathlib import PurePath
+current_dir = os.path.realpath(__file__)
+p = PurePath(current_dir)
+sys.path.append(str(p.parents[1]))
 
 import sys, os, time
 import numpy as np
@@ -18,7 +25,7 @@ from sympy import *
 #from sympy.printing.theanocode import theano_function
 from sympy.utilities.autowrap import ufuncify
 
-from special_functions import *
+from models.special_functions import *
 
 from tqdm import tqdm, trange, tqdm_notebook, tnrange
 
@@ -29,7 +36,8 @@ if not sys.warnoptions:
 
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.preprocessing import MinMaxScaler
-#from xgboost import XGBClassifier
+from sklearn.ensemble import RandomForestClassifier
+# from xgboost import XGBClassifier
 from sklearn.linear_model import LinearRegression, LogisticRegression, Ridge
 from sympy import Integral, Symbol
 from sympy.abc import x, y

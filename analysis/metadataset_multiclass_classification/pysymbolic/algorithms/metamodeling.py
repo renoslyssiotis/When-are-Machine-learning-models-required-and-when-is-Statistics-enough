@@ -2,15 +2,20 @@
 # Copyright (c) 2019, Ahmed M. Alaa
 # Licensed under the BSD 3-clause license (see LICENSE.txt)
 
+import os, sys
+from pathlib import PurePath
+current_dir = os.path.realpath(__file__)
+p = PurePath(current_dir)
+sys.path.append(str(p.parents[1]))
 
-from instancewise_feature_selection import *
+# from algorithms.instancewise_feature_selection import *
 import numpy as np
 from copy import deepcopy
 from sklearn.preprocessing import PolynomialFeatures
-from keras_predictive_models import *
-from synthetic_datasets import *
-from instancewise_metrics import *
-from special_functions import MeijerG
+# from algorithms.keras_predictive_models import *
+from benchmarks.synthetic_datasets import *
+from utilities.instancewise_metrics import *
+from models.special_functions import MeijerG
 from mpmath import *
 from sympy import *
 from sympy.functions import re
@@ -160,7 +165,7 @@ def get_theta_parameters(Thetas, Orders_in, Orders_out, n_dim):
 def Optimize(Loss, theta_0):
     
     opt       = minimize(Loss, theta_0, method='CG',  
-                         options={'xtol': 1e-2, 'maxiter':1, 'eps': 0.5, 'disp': True})
+                          options={'xtol': 1e-2, 'maxiter':1, 'eps': 0.5, 'disp': True})
     Loss_     = opt.fun
     theta_opt = opt.x
     
@@ -276,12 +281,12 @@ def exact_Kolmogorov_expression(n_dim, theta, Orders, Orders_out, const_, r=1):
 class Symbolic_Metamodel:
     
     def __init__(self, 
-                 n_dim=10, 
-                 batch_size=100, 
-                 num_iter=30,
-                 learning_rate= 1e-3,
-                 feature_types=None,
-                 **kwargs):
+                  n_dim=10, 
+                  batch_size=100, 
+                  num_iter=30,
+                  learning_rate= 1e-3,
+                  feature_types=None,
+                  **kwargs):
         
         self.n_dim         = n_dim
         self.batch_size    = batch_size
@@ -456,11 +461,11 @@ class Symbolic_Metamodel:
         x_original     = self.origin_x_train[subsamples_, :]
         
         f_est, f_grad  = eval_Kolmogorov_gradient_only(self.init_scale,
-                                                       x_, 
-                                                       theta.reshape((-1,)),
-                                                       self.Orders_in,
-                                                       self.Orders_out,
-                                                       h=0.01)
+                                                        x_, 
+                                                        theta.reshape((-1,)),
+                                                        self.Orders_in,
+                                                        self.Orders_out,
+                                                        h=0.01)
         
         f_est          = f_est.reshape((-1,1))
         
