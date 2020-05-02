@@ -9,8 +9,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
-
-
 with open(str(p.parents[2])+'/test/wine_quality/actual/wine_metafeatures_202.pickle', 'rb') as handle:
     wine_meta_features = pickle.load(handle)
     
@@ -76,7 +74,6 @@ for i in tqdm(range(10)):
     
     cylinder_predictions = grid_rforest.predict_proba(pd.DataFrame(cylinder_meta_features.values()).T)
     cylinder_pred = [sum(x) for x in zip(cylinder_pred, cylinder_predictions.tolist()[0])]        
-
 
 wine_pred = [x/10 for x in wine_pred]
 pump_pred = [x/10 for x in pump_pred]
