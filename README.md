@@ -25,9 +25,9 @@ conda install sklearn
 conda install pandas
 conda install scipy
 ```
-## Running the tests
-- Place your test dataset in the **Test results** folder
-- Open the test.py file and hange all the existing paths in the code to include the local paths on your machine
+## Running the KNN meta-learning tests
+- Place your test dataset in the **test** folder and name it **test** (e.g. test.csv if a CSV file)
+- Open the test.py file 
 - Run the test.py to obtain predictions about the best-performing models on your test dataset
 
 ## Authors
