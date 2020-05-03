@@ -10,6 +10,7 @@ generates the most accurate results on binary classification problems, without r
 following methods and techniques are implemented in order to be able to answer these questions:
 - Success rate ratios (SRR) ranking method
 - Regression and multi-linear regression of the performance gain and meta-features
+- Symbolic meta-modelling
 - KNN meta-learner with average ranks
 - Two-level clustering of meta-dataset
 
@@ -20,11 +21,26 @@ The required dependencies work with python 3.7. Install the following packages:
 - pandas
 - scikit-learn
 - scipy
+- matplotlib
+- pathlib, os, sys
 ```
 conda install sklearn
 conda install pandas
 conda install scipy
+conda install matplotlib
+conda install pathlib
 ```
+
+For symbolic meta-modelling
+- mpmath
+- sympy
+```
+conda install mpmath
+conda install sympy
+```
+
+
+
 ## Running the KNN meta-learning tests
 - Place your test dataset in the **test** folder and name it **test** (e.g. test.csv if a CSV file)
 - Open the test.py file 
