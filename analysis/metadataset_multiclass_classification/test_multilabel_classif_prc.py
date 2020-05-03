@@ -28,21 +28,21 @@ X = pd.DataFrame(data = scaler.fit_transform(X),
                  columns = list(df_results.columns[:23]))
 
 #Transform problem into a multi-label classification problem
-models = {'auc_f1_logit': 1,
-          'auc_f1_rforest': 2,
-          'auc_f1_MLP': 3,
-          'auc_f1_bagging': 4,
-          'auc_f1_perceptron': 5,
-          'auc_f1_ADAboost': 6,
-          'auc_f1_dtree': 7,
-          'auc_f1_bernoulliNB': 8,
-          'auc_f1_LDA': 9,
-          'auc_f1_QDA': 10,
-          'auc_f1_linearSVC': 11,
-          'auc_f1_gaussianNB': 12}
+models = {'auc_prc_logit': 1,
+          'auc_prc_rforest': 2,
+          'auc_prc_MLP': 3,
+          'auc_prc_bagging': 4,
+          'auc_prc_perceptron': 5,
+          'auc_prc_ADAboost': 6,
+          'auc_prc_dtree': 7,
+          'auc_prc_bernoulliNB': 8,
+          'auc_prc_LDA': 9,
+          'auc_prc_QDA': 10,
+          'auc_prc_linearSVC': 11,
+          'auc_prc_gaussianNB': 12}
 
-df_results = df_results.replace({'Best model f1': models})
-y = df_results['Best model f1']
+df_results = df_results.replace({'Best model PRC': models})
+y = df_results['Best model PRC']
 
 #Split dataset into the Training and Test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
