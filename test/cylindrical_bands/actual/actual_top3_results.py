@@ -92,12 +92,12 @@ results_prc = list(results_prc.keys())[::-1][:3]
 results_f1 = list(results_f1.keys())[::-1][:3]
 print("--- %s seconds ---" % (time.time() - start_time))
 
-# with open('cylinder_top_3_roc.pickle', 'wb') as handle:
-#     pickle.dump(results_roc, handle, protocol=pickle.HIGHEST_PROTOCOL)
-# with open('cylinder_top_3_prc.pickle', 'wb') as handle:
-#     pickle.dump(results_prc, handle, protocol=pickle.HIGHEST_PROTOCOL)    
-# with open('cylinder_top_3_f1.pickle', 'wb') as handle:
-#     pickle.dump(results_f1, handle, protocol=pickle.HIGHEST_PROTOCOL)
+with open('cylinder_top_3_roc.pickle', 'wb') as handle:
+    pickle.dump(results_roc, handle, protocol=pickle.HIGHEST_PROTOCOL)
+with open('cylinder_top_3_prc.pickle', 'wb') as handle:
+    pickle.dump(results_prc, handle, protocol=pickle.HIGHEST_PROTOCOL)    
+with open('cylinder_top_3_f1.pickle', 'wb') as handle:
+    pickle.dump(results_f1, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 #==============================================================================
 #       Run the best model (MLP) to check its execution time
