@@ -2489,4 +2489,4 @@ df_results['Maximum AUC-f1'] = pd.Series([max_f1_0, max_f1_1,max_f1_2,max_f1_3,m
 #                                 FINAL DATAFRAME
 #==============================================================================
 #Save the final results for offline use
-df_results.to_pickle('.test/df_results.plk')  # where to save it, usually as a .pkl
+df_results.to_pickle('.test/df_results.plk')  
